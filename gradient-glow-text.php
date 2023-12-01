@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Gradient Glow Text WordPress
+Plugin Name: Gradient Glow Text
 Description: Adds a gradient glow effect to Wordpress Content.[gradient_text_glow text="Custom Text" font_size="20px"]
 
 Version: 1.0
@@ -21,7 +21,7 @@ function gradient_text_glow_shortcode($atts, $content = null) {
     $atts = shortcode_atts(
         array(
             'text' => 'gradient text glow',
-            'font_size' => '5em', // Default font size
+            'font_size' => '900 clamp(.875em, 7.25vw, 5em) arial black, sans-serif', // Default font size
         ),
         $atts,
         'gradient_text_glow'
