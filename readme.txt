@@ -1,5 +1,5 @@
 # Gradient Glow Text Effect
-
+Description: Adds a gradient glow effect to Wordpress Content.[gradient_text_glow text="Custom Text" font_size="60" text_align="center"]
 ## Developer: Hassan Naqvi
 ## Version: 1.0
 MIT License
