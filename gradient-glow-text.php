@@ -1,7 +1,8 @@
 <?php
 /*
 Plugin Name: Gradient Glow Text
-Description: Adds a gradient glow effect to Wordpress Content.[gradient_text_glow text="Custom Text" font_size="20px"]
+Description: Adds a gradient glow effect to Wordpress Content.[gradient_text_glow text="Custom Text" font_size="60" text_align="center"]
+
 
 Version: 1.0
 Author: Hassan Naqvi
@@ -21,15 +22,17 @@ function gradient_text_glow_shortcode($atts, $content = null) {
     $atts = shortcode_atts(
         array(
             'text' => 'gradient text glow',
-            'font_size' => '900 clamp(.875em, 7.25vw, 5em) arial black, sans-serif', // Default font size
+            'font_size' => '900',
+            'text_align' => 'left',
         ),
         $atts,
         'gradient_text_glow'
     );
 
-    // Sanitize the text content and font size
+    // Sanitize the text content, font size, and text align
     $text_content = sanitize_text_field($atts['text']);
     $font_size = esc_attr($atts['font_size']);
+    $text_align = esc_attr($atts['text_align']);
 
     // Generate the unique class for each shortcode
     $unique_class = 'iftext_' . $shortcode_count;
@@ -43,8 +46,8 @@ function gradient_text_glow_shortcode($atts, $content = null) {
                     </filter>
                 </svg>';
 
-    // Generate the HTML code with the text, font size, and inline CSS using a <div> element with a unique class
-    $output = '<div class="iftext ' . esc_attr($unique_class) . '" style="filter: url(#f); font-size: ' . $font_size . ';">' . esc_html($text_content) . '</div>' . $svg_code;
+    // Generate the HTML code with the text, font size, text align, and inline CSS using a <div> element with a unique class
+    $output = '<div class="iftext ' . esc_attr($unique_class) . '" style="filter: url(#f); font-size: ' . $font_size . 'px; text-align: ' . $text_align . ';">' . esc_html($text_content) . '</div>' . $svg_code;
 
     return $output;
 }
