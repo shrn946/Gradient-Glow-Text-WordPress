@@ -23,6 +23,7 @@ svg[height="0"] {
   /* needs support for animating custom properties */
   /* Firefox not quite there yet, but it's coming */
   animation: k 4s linear infinite;
+  line-height:100%;
 }
 
 @keyframes k {
