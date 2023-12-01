@@ -22,7 +22,7 @@ function gradient_text_glow_shortcode($atts, $content = null) {
     $atts = shortcode_atts(
         array(
             'text' => 'gradient text glow',
-            'font_size' => '900',
+            'font_size' => '5em',
             'text_align' => 'left',
         ),
         $atts,
